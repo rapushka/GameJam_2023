@@ -1,5 +1,3 @@
-using System;
-using System.Reflection;
 using UnityEngine;
 
 namespace Code
@@ -19,6 +17,8 @@ namespace Code
 
 		private float ScaledSpeed => _movementSpeed * Time.fixedDeltaTime;
 
+		private Vector2 Movement => _movingDirection * ScaledSpeed;
+
 		private void Update()
 		{
 			_movingDirection = new Vector2(HorizontalAxis, VerticalAxis);
@@ -35,10 +35,6 @@ namespace Code
 
 		private void Rotate() => transform.rotation = Quaternion.LookRotation(_movingDirection.ToTopDown());
 
-		private void Move()
-		{
-			var movement = _movingDirection * ScaledSpeed;
-			_characterController.Move(movement.ToTopDown());
-		}
+		private void Move() => _characterController.Move(Movement.ToTopDown());
 	}
 }
