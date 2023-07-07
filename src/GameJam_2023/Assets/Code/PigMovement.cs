@@ -6,6 +6,7 @@ namespace Code
 	{
 		[SerializeField] private CharacterController _characterController;
 		[SerializeField] private float _movementSpeed;
+		[SerializeField] private float _rotationSpeed;
 
 		private Vector2 _movingDirection;
 
@@ -19,10 +20,13 @@ namespace Code
 
 		private Vector2 Movement => _movingDirection * ScaledSpeed;
 
-		private void Update()
-		{
-			_movingDirection = new Vector2(HorizontalAxis, VerticalAxis);
-		}
+		private Vector3 LookDirection => _movingDirection.ToTopDown().normalized;
+
+		private Quaternion TargetRotation => Quaternion.LookRotation(LookDirection, Vector3.up);
+
+		private float ScaledRotation => Time.fixedDeltaTime * _rotationSpeed;
+
+		private void Update() => _movingDirection = new Vector2(HorizontalAxis, VerticalAxis);
 
 		private void FixedUpdate()
 		{
@@ -33,7 +37,7 @@ namespace Code
 			}
 		}
 
-		private void Rotate() => transform.rotation = Quaternion.LookRotation(_movingDirection.ToTopDown());
+		private void Rotate() => transform.SlerpRotate(to: TargetRotation, withSpeed: ScaledRotation);
 
 		private void Move() => _characterController.Move(Movement.ToTopDown());
 	}

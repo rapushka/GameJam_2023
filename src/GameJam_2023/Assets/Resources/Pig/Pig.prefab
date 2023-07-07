@@ -179,3 +179,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterController: {fileID: 7761531935644791478}
   _movementSpeed: 5
+  _rotationSpeed: 10
