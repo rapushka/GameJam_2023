@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pigSpawnPoint: {fileID: 36363984}
+  _camera: {fileID: 963194227}
 --- !u!1 &2070403170
 GameObject:
   m_ObjectHideFlags: 0
