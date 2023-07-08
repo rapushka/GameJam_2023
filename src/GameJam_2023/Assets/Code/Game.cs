@@ -6,12 +6,11 @@ namespace Code
 	{
 		[SerializeField] private Transform _pigSpawnPoint;
 		[SerializeField] private SmoothCamera _camera;
+		[SerializeField] private Pig _pigPrefab;
 
 		private void Start()
 		{
-			var pigPrefab = Resources.Load<GameObject>("Pig/Pig");
-
-			var pig = Instantiate(pigPrefab, _pigSpawnPoint.position, Quaternion.identity);
+			var pig = Instantiate(_pigPrefab, _pigSpawnPoint.position, Quaternion.identity);
 			_camera.Construct(pig.transform);
 		}
 	}
