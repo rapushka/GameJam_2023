@@ -19,9 +19,6 @@ namespace Code
 
 		private void FixedUpdate() => MoveToTarget();
 
-		private void MoveToTarget()
-		{
-			CameraPosition = Vector3.Lerp(CameraPosition, TargetPosition, ScaledSpeed);
-		}
+		private void MoveToTarget() => CameraPosition = Vector3.Lerp(CameraPosition, TargetPosition, ScaledSpeed);
 	}
 }
