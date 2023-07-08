@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Code
@@ -10,46 +11,43 @@ namespace Code
 		[SerializeField] private Vector3 _offset;
 
 		private Transform _target;
-		private Vector3 _cameraPosition;
-		private Vector3 _targetPosition;
+
+		private Vector3 TargetPosition { get => _target.position; set => _target.position = value; }
+
+		private Vector3 CameraPosition { get => transform.position; set => transform.position = value; }
 
 		public void Construct(Transform target) => _target = target;
 
-		private void Start()
-		{
-			_cameraPosition = transform.position;
-			_targetPosition = _cameraPosition;
-		}
-
 		private void Update()
 		{
-			_targetPosition = _target.transform.position + _offset;
-			var distanceToTarget = _targetPosition - _cameraPosition;
+			var distanceToTarget = TargetPosition - CameraPosition;
 
 			MoveToTarget(distanceToTarget);
 			LimitInBounces();
-			UpdatePosition();
 		}
-
-		private void UpdatePosition() { transform.position = _cameraPosition; }
 
 		private void LimitInBounces()
 		{
-			_cameraPosition.x = Mathf.Clamp(_cameraPosition.x, 0, _levelSizes.Width);
-			_cameraPosition.y = Mathf.Clamp(_cameraPosition.y, 0, _levelSizes.Height);
+			CameraPosition.Set
+			(
+				x: CameraPosition.x.Clamp(max: _levelSizes.Width),
+				z: CameraPosition.y.Clamp(max: _levelSizes.Height)
+			);
 		}
 
 		private void MoveToTarget(Vector3 distanceToTarget)
 		{
 			if (Mathf.Abs(distanceToTarget.x) > _cameraBorder)
 			{
-				_cameraPosition.x += _cameraSpeed * Mathf.Sign(distanceToTarget.x);
+				CameraPosition.Set(x: _cameraSpeed * Mathf.Sign(distanceToTarget.x));
 			}
 
 			if (Mathf.Abs(distanceToTarget.y) > _cameraBorder)
 			{
-				_cameraPosition.y += _cameraSpeed * Mathf.Sign(distanceToTarget.y);
+				CameraPosition.Set(y: _cameraSpeed * Mathf.Sign(distanceToTarget.y));
 			}
+
+			CameraPosition = TargetPosition + _offset;
 		}
 	}
 }
