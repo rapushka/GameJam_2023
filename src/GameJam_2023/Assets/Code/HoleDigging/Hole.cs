@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
-namespace Assets.Code.HoleDigging
+namespace Code
 {
-    class Hole
+    class Hole : MonoBehaviour
     {
 
     }

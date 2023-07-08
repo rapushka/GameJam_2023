@@ -10,11 +10,17 @@ public class ProgressBar : MonoBehaviour
 
     public event Action Filled;
 
-    private int FillAmount => _currentValue / _maxValue;
+    private float FillAmount => (float)_currentValue / _maxValue;
 
     public void Increment(int value = 1)
     {
         _currentValue += value;
+        UpdateFill();
+    }
+
+    public void Reset()
+    {
+        _currentValue = 0;
         UpdateFill();
     }
 
