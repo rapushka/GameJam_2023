@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Code
@@ -6,7 +5,6 @@ namespace Code
 	public class SmoothCamera : MonoBehaviour
 	{
 		[SerializeField] private float _cameraSpeed = 5f;
-		[SerializeField] private float _cameraBorder = 150f;
 		[SerializeField] private Size _levelSizes;
 		[SerializeField] private Vector3 _offset;
 
@@ -18,11 +16,9 @@ namespace Code
 
 		public void Construct(Transform target) => _target = target;
 
-		private void Update()
+		private void FixedUpdate()
 		{
-			var distanceToTarget = TargetPosition - CameraPosition;
-
-			MoveToTarget(distanceToTarget);
+			MoveToTarget();
 			LimitInBounces();
 		}
 
@@ -35,19 +31,9 @@ namespace Code
 			);
 		}
 
-		private void MoveToTarget(Vector3 distanceToTarget)
+		private void MoveToTarget()
 		{
-			if (Mathf.Abs(distanceToTarget.x) > _cameraBorder)
-			{
-				CameraPosition.Set(x: _cameraSpeed * Mathf.Sign(distanceToTarget.x));
-			}
-
-			if (Mathf.Abs(distanceToTarget.y) > _cameraBorder)
-			{
-				CameraPosition.Set(y: _cameraSpeed * Mathf.Sign(distanceToTarget.y));
-			}
-
-			CameraPosition = TargetPosition + _offset;
+			CameraPosition = Vector3.MoveTowards(CameraPosition, TargetPosition + _offset, _cameraSpeed * Time.deltaTime);
 		}
 	}
 }
