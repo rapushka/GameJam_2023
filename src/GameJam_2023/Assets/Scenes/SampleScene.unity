@@ -385,11 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25338eb176e448b9af8ef4a8bca4f2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraSpeed: 5
-  _cameraBorder: 150
-  _levelSizes:
-    <Width>k__BackingField: 100
-    <Height>k__BackingField: 100
+  _cameraSpeed: 3
   _offset: {x: 0, y: 5, z: -6}
 --- !u!1 &1898521487
 GameObject:
