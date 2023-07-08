@@ -15,7 +15,7 @@ namespace Code
 
 		private bool TasksRemained => _currentTaskIndex >= _tasks.Count;
 
-		private FarmTask CurrentTask => _tasks[_currentTaskIndex];
+		public FarmTask CurrentTask => _tasks[_currentTaskIndex];
 
 		private bool IsCurrentTaskCompleted => _remainedDuration <= 0f;
 

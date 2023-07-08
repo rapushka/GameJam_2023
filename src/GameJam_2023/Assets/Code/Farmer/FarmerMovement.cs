@@ -6,11 +6,14 @@ namespace Code
 	public class FarmerMovement : MonoBehaviour
 	{
 		[SerializeField] private NavMeshAgent _navMeshAgent;
-		[SerializeField] private Vector3 _destination;
+		[SerializeField] private FarmerSchedule _schedule;
 
-		private void Start()
+		private void OnEnable()  => _schedule.TaskCompleted += GoToNextTask;
+		private void OnDisable() => _schedule.TaskCompleted -= GoToNextTask;
+
+		private void GoToNextTask()
 		{
-			_navMeshAgent.SetDestination(_destination);
+			_navMeshAgent.SetDestination(_schedule.CurrentTask.TargetPosition);
 		}
 	}
 }
