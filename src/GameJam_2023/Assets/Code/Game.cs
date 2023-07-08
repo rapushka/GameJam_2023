@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Code
 {
-	public class GameBootstrap : MonoBehaviour
+	public class Game : MonoBehaviour
 	{
 		[SerializeField] private Transform _pigSpawnPoint;
 		[SerializeField] private Camera _camera;
