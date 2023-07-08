@@ -13,7 +13,7 @@ namespace Code
 
 		public event Action TaskCompleted;
 
-		private bool TasksRemained => _currentTaskIndex >= _tasks.Count;
+		private bool TasksRemained => _tasks.IsInRange(_currentTaskIndex);
 
 		public FarmTask CurrentTask => _tasks[_currentTaskIndex];
 

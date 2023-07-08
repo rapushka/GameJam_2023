@@ -15381,9 +15381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tasks:
-  - <StartTime>k__BackingField: 1
+  - <Duration>k__BackingField: 5
     _targetTransform: {fileID: 1346162909}
-  - <StartTime>k__BackingField: 10
+  - <Duration>k__BackingField: 5
     _targetTransform: {fileID: 856776976}
 --- !u!4 &787288222 stripped
 Transform:
@@ -22766,6 +22766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farmer
       objectReference: {fileID: 0}
+    - target: {fileID: 8461685316104438889, guid: 8c2444e10f247f743bfafeb2aa25042e, type: 3}
+      propertyPath: _schedule
+      value: 
+      objectReference: {fileID: 785448387}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
