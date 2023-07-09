@@ -14,9 +14,15 @@ namespace Code
 			_camera.Construct(pig.transform);
 		}
 
-		public void Loose()
+		public void Lose()
 		{
 			Debug.Log("You lose");
+			Debug.Break();
+		}
+
+		public void Win()
+        {
+			Debug.Log("You won");
 			Debug.Break();
 		}
 	}

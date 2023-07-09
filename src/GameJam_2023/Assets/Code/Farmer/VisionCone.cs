@@ -14,7 +14,7 @@ namespace Code
 		{
 			if (_farmer.IsInBarn == false)
 			{
-				Game.Loose();
+				Game.Lose();
 			}
 		}
 	}
