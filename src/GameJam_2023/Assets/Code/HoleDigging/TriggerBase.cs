@@ -14,5 +14,7 @@ namespace Code
         protected abstract void Do();
 
         protected abstract void Undo();
+
+        private void OnDestroy() => Undo();
     }
 }
