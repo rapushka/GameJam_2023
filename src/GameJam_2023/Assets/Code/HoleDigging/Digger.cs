@@ -6,6 +6,8 @@ namespace Code
     {
         [SerializeField] private float _durationToDig;
         [SerializeField] private ProgressBar _progressBar;
+        [SerializeField] private Transform _positionForHoleOutside;
+
         private float _holdingDuration = 0;
         private KeyCode Key => KeyCode.E;
 
@@ -39,7 +41,13 @@ namespace Code
         private void DigHole()
         {
             var holePrefab = Resources.Load<Hole>("Hole/Hole");
-            var hole = Instantiate(holePrefab, transform.position, Quaternion.identity);
+            var holeInner = Instantiate(holePrefab, transform.position, Quaternion.identity);
+            var holeOuter = Instantiate(holePrefab, _positionForHoleOutside.position, Quaternion.identity);
+
+            holeInner.Constract(holeOuter);
+            holeOuter.Constract(holeInner);
+
+            Destroy(gameObject);
         }
     }
 }
