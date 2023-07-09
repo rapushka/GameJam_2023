@@ -4372,19 +4372,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8985684
+      value: 0.92387956
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.43883356
+      value: -0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4392,7 +4392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -52.059
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 5478901678525506359, guid: 4a7a7d67fc11af54eb471a245fa7bc29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4607,6 +4607,7 @@ Transform:
   - {fileID: 829672228}
   - {fileID: 629771904}
   - {fileID: 592985488}
+  - {fileID: 1015865989}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15383,7 +15384,7 @@ MonoBehaviour:
   _tasks:
   - <Duration>k__BackingField: 5
     _targetTransform: {fileID: 1346162909}
-  - <Duration>k__BackingField: 5
+  - <Duration>k__BackingField: 10
     _targetTransform: {fileID: 856776976}
 --- !u!4 &787288222 stripped
 Transform:
@@ -19253,6 +19254,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb422acdc199d6e42910f589b81c283b, type: 3}
+--- !u!1 &1015865988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1015865989}
+  - component: {fileID: 1015865990}
+  - component: {fileID: 1015865991}
+  m_Layer: 0
+  m_Name: Barn floor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015865989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015865988}
+  m_LocalRotation: {x: -0, y: 0.37578785, z: -0, w: 0.9267057}
+  m_LocalPosition: {x: -2.57, y: -0.3948, z: 2.07}
+  m_LocalScale: {x: 1, y: 0.1, z: 7.3410625}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 179261538}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 44.146, z: 0}
+--- !u!65 &1015865990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015865988}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.790432, y: 10, z: 1.8669803}
+  m_Center: {x: -8.868582, y: 5.180129, z: -0.08501734}
+--- !u!114 &1015865991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015865988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06db19c15690494bb2d2004a3a453117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1019055667
 PrefabInstance:
   m_ObjectHideFlags: 0

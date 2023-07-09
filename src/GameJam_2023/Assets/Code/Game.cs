@@ -17,7 +17,7 @@ namespace Code
 		public void Loose()
 		{
 			Debug.Log("You lose");
-			Time.timeScale = 0f;
+			Debug.Break();
 		}
 	}
 }
